@@ -35,7 +35,10 @@ let package = Package(
             resources: [
                 .process("Resources/PrivacyInfo.xcprivacy")
             ],
-            publicHeadersPath: "Public"
+            publicHeadersPath: "Public",
+            cSettings: [
+                .define("STRIP_GTM_FETCH_LOGGING", to: "0")
+            ]
         ),
         .target(
             name: "GTMSessionFetcherFull",
@@ -44,7 +47,10 @@ let package = Package(
             resources: [
                 .process("Resources/PrivacyInfo.xcprivacy")
             ],
-            publicHeadersPath: "Public"
+            publicHeadersPath: "Public",
+            cSettings: [
+                .define("STRIP_GTM_FETCH_LOGGING", to: "0")
+            ]
         ),
         .target(
             name: "GTMSessionFetcherLogView",
